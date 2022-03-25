@@ -1,1 +1,21 @@
 <p>ostukorv works!</p>
+
+<div *ngIf="number > 100">{{number}}</div>   <!-- see peab siin olema muidu ei saa aru kus mida korrutaKahega number tuleb-->
+<!-- Nüüd ei näitagi kui on alla saja -->
+
+<div>{{boolean}}</div>
+<div *ngIf="boolean">{{string}}</div>  <!-- ng on Angular-->
+
+<!-- *ngIf="expression" idee on selles et näiteks ostukorvis ei näe hinda ennem kui ostad asju -->
+
+<!-- tumesinine - tag (button, div, img, span)
+    helesinine - muutujad, tagi vasakpoolne atribuut (class, click, src)
+    kollane - funktsioonid
+    valge - mida näidatakse kasutajale brauseris välja
+-->
+
+<button (click)="korrutaKahega()"> Korruta<br> number kahega</button>
+
+<button (click)="muudaBoolean()"> Muuda Boolean<br> false-ks</button>
+
+<button (click)="muudaBoolean2()"> Muuda Boolean</button>
