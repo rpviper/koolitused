@@ -1,10 +1,20 @@
-<p>ostukorv works!</p>
+<button *ngIf="ostukorviTooted.length > 0"(click)="tyhjendaTooted()">Tühjenda</button>
+<div *ngIf="ostukorviTooted.length === 1">Ostukorvis on {{ostukorviTooted.length}} toode.</div>     <!-- kui on täpselt üks toode -->
+<div *ngIf="ostukorviTooted.length >= 2">Ostukorvis on {{ostukorviTooted.length}} toodet.</div>     <!-- rohkem/võrdne kui kaks toodet -->
 
-<div *ngIf="number > 100">{{number}}</div>   <!-- see peab siin olema muidu ei saa aru kus mida korrutaKahega number tuleb-->
+<div *ngIf="ostukorviTooted.length === 0">Ostukorv on tühi.</div>
+
+<div *ngFor="let toode of ostukorviTooted">     <!-- tuleb sealt ts failist / toode on enda valida-->
+    <span>Toode: {{ toode }} </span>        <!-- <span> kaotab nagu selle rea ära kus üksteise all on asjad-->
+    <button (click)="kustutaToode(toode)">x</button>
+    <button (click)="lisaToode(toode)">+</button>
+</div>
+
+<!-- <div *ngIf="number > 100">{{number}}</div>   see peab siin olema muidu ei saa aru kus mida korrutaKahega number tuleb -->
 <!-- Nüüd ei näitagi kui on alla saja -->
 
-<div>{{boolean}}</div>
-<div *ngIf="boolean">{{string}}</div>  <!-- ng on Angular-->
+<!-- <div>{{boolean}}</div>
+<div *ngIf="boolean">{{string}}</div>  ng on Angular -->
 
 <!-- *ngIf="expression" idee on selles et näiteks ostukorvis ei näe hinda ennem kui ostad asju -->
 
@@ -14,8 +24,16 @@
     valge - mida näidatakse kasutajale brauseris välja
 -->
 
-<button (click)="korrutaKahega()"> Korruta<br> number kahega</button>
+<!-- <button (click)="korrutaKahega()"> Korruta<br> number kahega</button>
 
 <button (click)="muudaBoolean()"> Muuda Boolean<br> false-ks</button>
 
-<button (click)="muudaBoolean2()"> Muuda Boolean</button>
+<button (click)="muudaBoolean2()"> Muuda Boolean</button> -->
+
+<!-- 
+KUI html-s soovin muutujaid välja näidata
+siis need peavad olema SAMA componendi
+.ts failis olemas
+muidu on punane joon muutuja all
+{{  }} - string interpolation -->
+
