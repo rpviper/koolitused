@@ -4,12 +4,13 @@
 
 <div *ngIf="ostukorviTooted.length === 0">Ostukorv on tühi.</div>
 
-<div *ngFor="let toode of ostukorviTooted">     <!-- tuleb sealt ts failist / toode on enda valida-->
-    <span>Toode: {{ toode }} </span>        <!-- <span> kaotab nagu selle rea ära kus üksteise all on asjad-->
-    <button (click)="kustutaToode(toode)">x</button>
-    <button (click)="lisaToode(toode)">+</button>
+<div *ngFor="let t of ostukorviTooted">     <!-- tuleb sealt ts failist / toode on enda valida-->
+    <span>Toode: {{ t.nimi }} </span>        <!-- <span> kaotab nagu selle rea ära kus üksteise all on asjad-->
+        <span>{{ t.hind }} € </span> 
+    <button (click)="kustutaToode(t)">x</button>
+    <button (click)="lisaToode(t)">+</button>
 </div>
-
+<div>Kokku: {{koguSumma}} € </div>
 <!-- <div *ngIf="number > 100">{{number}}</div>   see peab siin olema muidu ei saa aru kus mida korrutaKahega number tuleb -->
 <!-- Nüüd ei näitagi kui on alla saja -->
 

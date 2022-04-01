@@ -1,14 +1,12 @@
-
-    <!-- <div *ngFor="let nimi of ['jama', 'ikka', 'saab', 329, true]">
-        <div>Nimi:{{ nimi }} </div>
-        <div>Hind: 2</div>
+<!-- salvestamine
+1. Andmebaasi: nimi, arve, tellimused, tooted jne
+2. Brauserisse: seaded,  ostukorvi sisu
+  -->
+ 
+ 
+ <div *ngFor="let t of tooted">   <!-- see t siin on mu enda pandud, võibolla isegi tsurka kui tahan -->
+        <div>Nimi:{{ t.nimi }} </div>    <!-- .nimi tuleb avaleht.ts arrayst -->
+        <div>Hind: {{t.hind}} </div>
         <div>Kategooria: coca</div>
-        <button>Lisa {{ nimi }} ostukorvi </button>
-    </div> -->
-
-    <div *ngFor="let nimi of tooted">
-        <div>Nimi:{{ nimi }} </div>
-        <div>Hind: 2</div>
-        <div>Kategooria: coca</div>
-        <button>Lisa {{ nimi }} ostukorvi </button>
+        <button (click)="lisaOstukorvi(t)">Lisa {{ t.nimi }} ostukorvi </button>
     </div>
