@@ -1,0 +1,19 @@
+<div *ngIf="inimesed.length ===1"><h3> Siin listis on {{inimesed.length}} inimene </h3></div>
+<div *ngIf="inimesed.length >=2"><h3> Siin listis on {{inimesed.length}} inimest </h3></div>
+<div *ngIf="inimesed.length ===0"><h3> Siin listis pole inimesi </h3></div>
+<div *ngIf="inimesed.length >0 ">Vanus kokku: {{iga}} aastat</div>
+<div *ngIf="inimesed.length >0 ">Keskmine vanus: {{age.toFixed(0) }} aastat</div> <!-- tofixed is about comma places -->
+
+<button (click)="tyhjenda()">Tühjenda</button>
+<div *ngFor="let person of inimesed"><br>
+    <div>Nimi: {{person.name}} </div>
+    <div>Vanus: {{person.vanus}} </div>
+    <div>E-mail: {{person.email}} </div>
+    <button (click)="lisaInimene(person)">Lisa </button>
+    <button (click)="kustutaInimene(person)">Kustuta</button>
+
+</div>
+
+
+
+
