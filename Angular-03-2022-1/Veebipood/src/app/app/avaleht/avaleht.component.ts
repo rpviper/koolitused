@@ -14,7 +14,7 @@ export class AvalehtComponent implements OnInit {   //export - saaks importida
 tooted = [
 {nimi: "Coca cola", hind: 2, aktiivne: true},
 {nimi: "Fanta", hind: 3 , aktiivne: true},   // need kaks
-{nimi: "Sprite", hind: 2.5, aktiivne: true},  // ei näita avalehel, saad varjata
+{nimi: "Sprite", hind: 2.5, aktiivne: false},  // ei näita avalehel, saad varjata
 {nimi: "Vichy", hind: 4, aktiivne: true}, 
 {nimi: "Vitamin well", hind: 6, aktiivne: true}]; // koosneb viiest elemendist
 
@@ -23,12 +23,6 @@ tooted = [
   constructor() {console.log("pannakse avaleht construktor käima") }
 
   ngOnInit(): void {console.log("pannakse avaleht ngOnInit käima")
-
-  const tootedLS = localStorage.getItem("tooted");   // tootedLS on minu enda valik sõna, aga represendib siis et on vaja local storage jaoks
-  if (tootedLS !== null) {
-    this.tooted = JSON.parse(tootedLS);
-  }
-
   }
 
 lisaOstukorvi(toode: any) {

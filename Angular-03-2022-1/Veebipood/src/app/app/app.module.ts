@@ -10,7 +10,6 @@ import { MuudaToodeComponent } from './admin/muuda-toode/muuda-toode.component';
 import { VaataTooteidComponent } from './admin/vaata-tooteid/vaata-tooteid.component';
 import { AdminKoduComponent } from './admin/admin-kodu/admin-kodu.component';
 import { FormsModule } from '@angular/forms';
-import { YksikToodeComponent } from './yksik-toode/yksik-toode.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { YksikToodeComponent } from './yksik-toode/yksik-toode.component';
     MuudaToodeComponent,
     VaataTooteidComponent,
     AdminKoduComponent,
-    YksikToodeComponent,
   ],
   imports: [    // HTML jaoks impordid
     BrowserModule,      // *ngFor, *ngIf - need on põhimõtteliselt et saaks kasutada lühendeid

@@ -7,11 +7,9 @@
 
  <div *ngFor="let t of tooted">   <!-- see t siin on mu enda pandud, võibolla isegi bulls kui tahan -->
     <div *ngIf="t.aktiivne">       <!-- näitab kodulehel üldse v mitte, ainult admin näeb -->
-    <div routerLink="/toode/{{t.nimi.replaceAll(' ', '-').toLowerCase()}}">
-        <div>Nimi: {{ t.nimi }} </div>    <!-- .nimi tuleb avaleht.ts arrayst -->
+    <div>Nimi:{{ t.nimi }} </div>    <!-- .nimi tuleb avaleht.ts arrayst -->
         <div>Hind: {{t.hind}} </div>
         <div>Kategooria: coca</div>
-    </div>
         <button (click)="lisaOstukorvi(t)">Lisa {{ t.nimi }} ostukorvi </button>
     </div>
 </div>
