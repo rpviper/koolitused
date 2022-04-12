@@ -1,1 +1,10 @@
 <button routerLink="/admin/tooted">Tagasi</button>
+
+<form (ngSubmit)="muudaToode()" [formGroup] = "muutmiseVorm">
+    <label>Nimi: </label>
+    <input formControlName="nimi" type="text">
+    <label>Hind: </label>
+    <input formControlName="hind" type="number">
+    <label>Aktiivne: </label>
+    <input formControlName="aktiivne" type="checkbox">
+</form>

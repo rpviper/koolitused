@@ -1,4 +1,5 @@
 import { JsonPipe } from '@angular/common';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { jsDocComment } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
@@ -16,9 +17,7 @@ export class OstukorvComponent implements OnInit {
   ostukorviTooted: any[] = []; 
   koguSumma = 0;
 
-  constructor() {
-    console.log("pannakse ostukorv construktor käima");
-   }
+  constructor(private http: HttpClient) {}    // constructori töö on angulari koodilõikude ühendamine selle component külge
 
   ngOnInit(): void {
     console.log("pannakse ostukorv ngOnInit käima")
@@ -84,5 +83,28 @@ private arvutaKogusumma() {
   // element on mu enda valida sõna, selle funktsiooni töö on koguhind teha
 }
 
+maksma() {
+  const makseAndmed = {                 // see tuli postman-st
+    "api_username": "92ddcfab96e34a5f",
+    "account_name": "EUR3D1",
+    "amount": this.koguSumma,
+    "order_reference": Math.random() * 100,   // see viimane osa on lihtsalt et oleks rohkem random
+    "nonce": "a43h" + new Date() + Math.random() * 2,
+    "timestamp": new Date(),
+    "customer_url": "https://angularveebipood.web.app"  // see on see firebase leht, kuhu siis peaks tagasi suunama
+    }
+
+    const headers = {
+      headers: new HttpHeaders(   // tuli headers generaters, see password sealt every payst
+        {
+          "Authorization": 
+          "Basic OTJkZGNmYWI5NmUzNGE1Zjo4Y2QxOWU5OWU5YzJjMjA4ZWU1NjNhYmY3ZDBlNGRhZA=="
+        }
+      )
+    };
+    this.http.post<any>("https://igw-demo.every-pay.com/api/v4/payments/oneoff",  // see tuli postman-st
+    makseAndmed, 
+    headers).subscribe(tagastus => location.href = tagastus.payment_link)   
+}
 
 }

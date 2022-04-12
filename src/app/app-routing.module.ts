@@ -14,7 +14,7 @@ const routes: Routes = [        //means localhost path: localhost 4200
   {path: "toode/:tooteNimi", component: YksikToodeComponent},
   {path: "admin", component: AdminKoduComponent},
   {path: "admin/lisa", component:LisaToodeComponent},
-  {path: "admin/muuda", component:MuudaToodeComponent},
+  {path: "admin/muuda/:tooteNimi", component:MuudaToodeComponent},
   {path: "admin/tooted", component:VaataTooteidComponent},
 ];
 

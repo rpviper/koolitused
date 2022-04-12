@@ -9,8 +9,9 @@ import { LisaToodeComponent } from './admin/lisa-toode/lisa-toode.component';
 import { MuudaToodeComponent } from './admin/muuda-toode/muuda-toode.component';
 import { VaataTooteidComponent } from './admin/vaata-tooteid/vaata-tooteid.component';
 import { AdminKoduComponent } from './admin/admin-kodu/admin-kodu.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { YksikToodeComponent } from './yksik-toode/yksik-toode.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { YksikToodeComponent } from './yksik-toode/yksik-toode.component';
   imports: [    // HTML jaoks impordid
     BrowserModule,      // *ngFor, *ngIf - need on põhimõtteliselt et saaks kasutada lühendeid
     AppRoutingModule,   // routerLink=""
-    FormsModule     // ngForm
+    FormsModule,     // ngForm
+    HttpClientModule,   // selle lisasime makse juures
+    ReactiveFormsModule   // [formGroup]=""
   ],
   providers: [],
   bootstrap: [AppComponent]
