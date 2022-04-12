@@ -1,0 +1,4 @@
+input.ng-invalid.ng-touched {     /* see tuli inspect element web pagist */  
+    border: 1px solid red;
+}       /* ei ole punane, aga nagu ei trüki miskit, läheb punaseks */
+/* et kui on input, kui on invalid siis on punane ja ja kui on touched siis kaob ära */

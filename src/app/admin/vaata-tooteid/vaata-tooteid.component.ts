@@ -9,7 +9,7 @@ export class VaataTooteidComponent implements OnInit {
 
   tooted = [
     {nimi: "Coca cola", hind: 2, aktiivne: true},
-    {nimi: "Fanta", hind: 3 , aktiivne: true},   // need kaks
+    {nimi: "Fanta", hind: 3 , aktiivne: true},   // need kaks, kui on aktiivne: false
     {nimi: "Sprite", hind: 2.5, aktiivne: true},  // ei näita avalehel, saad varjata
     {nimi: "Vichy", hind: 4, aktiivne: true}, 
     {nimi: "Vitamin well", hind: 6, aktiivne: true}

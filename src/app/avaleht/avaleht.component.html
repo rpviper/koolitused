@@ -3,11 +3,13 @@
 2. Brauserisse: seaded,  ostukorvi sisu
   -->
  
- <!-- kahte tärniga asja ei saa ühte funts panna, aka *ngif, *ngfor -->
+<!-- KASUTA CONSOLE.LOG NIIPALJU KUI VÄHEGI VÕIMALIK!!! KOHE KUI MISKIT EI TÖÖTA!!! -->
+
+ <!-- kahte tärniga asja ei saa ühte funkts panna, aka *ngif, *ngfor -->
 
  <div *ngFor="let t of tooted">   <!-- see t siin on mu enda pandud, võibolla isegi bulls kui tahan -->
     <div *ngIf="t.aktiivne">       <!-- näitab kodulehel üldse v mitte, ainult admin näeb -->
-    <div routerLink="/toode/{{t.nimi.replaceAll(' ', '-').toLowerCase()}}">
+    <div routerLink="/toode/{{t.nimi.replaceAll(' ', '-').toLowerCase()}}">  <!-- asendab siis kõik tühikud sidekriipsudega  ja teeb ka lowercase -->
         <div>Nimi: {{ t.nimi }} </div>    <!-- .nimi tuleb avaleht.ts arrayst -->
         <div>Hind: {{t.hind}} </div>
         <div>Kategooria: coca</div>

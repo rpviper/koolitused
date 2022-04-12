@@ -13,14 +13,14 @@ export class YksikToodeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const tooteNimi = location.href.split("toode/")[1];
+    const tooteNimi = location.href.split("toode/")[1];   // see [1] tähendab et toode/ on 0 ja mis iganes tuleb pärast seda siis
 
     let tootedLS = localStorage.getItem("tooted");   // tootedLS on minu enda valik sõna, aga represendib siis et on vaja local storage jaoks
-     if (tootedLS !== null) {
+     if (tootedLS) {                               // tootedLS !== null
        const tooted: any[] = JSON.parse(tootedLS);
 
        this.toode = tooted.find(element => element.nimi.replaceAll(" ", "-").toLowerCase() === tooteNimi);
-     }
+     }    // element.nimi me peame panema selle replaceAll sinna sest tooteNimi on muidu suure tähega, tühikutega jne jne
   }
 
 }

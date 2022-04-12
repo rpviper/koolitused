@@ -3,10 +3,10 @@
 <!-- a-form --- valin ngForm --- teen sama nimega funktsiooni .ts faili
 ngForm impordi lisan app.module.ts sisse -->
 <form (ngSubmit)="lisa(lisamiseVorm)" #lisamiseVorm="ngForm">  <!-- # tähendab ID ja peab olema sama mis lisa() sees on -->
-  <label>Nimetus</label> <br>
-  <input ngModel name="nimi" type="text" required> <br>
+  <label>Nimetus</label> <br>                               <!-- see ngsubmit on sama mis (click)="lisa"-->
+  <input ngModel name="nimi" type="text" required> <br>   <!-- required tähendab et siis vaja on miskit trükkida -->
   <label>Hind</label> <br>
-  <input ngModel name="hind" type="number" required> <br>
+  <input ngModel name="hind" type="number" required> <br>   <!-- ngmodel seob selle "ngform" külge siis -->
   <label>Aktiivne</label> <br>
   <input ngModel name="aktiivne" type="checkbox"> <br>
   <button [disabled]="lisamiseVorm.invalid">Sisesta </button> <br>  <!-- nupp on hidden niikaua kui ei ole miskit typitud -->
