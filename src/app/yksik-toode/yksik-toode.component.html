@@ -1,4 +1,7 @@
-<div> {{toode.nimi}} </div>
+<div *ngIf="toode"> <!-- kui saab andmebaasist kätte, kui seda ei ole siis on consolis error-->
+ <div> {{toode.nimi}} </div>
 <div> {{toode.hind}} </div>
 <div> {{toode.aktiivne}} </div>
+</div>
+
 

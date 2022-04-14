@@ -84,8 +84,8 @@ private arvutaKogusumma() {
 }
 
 maksma() {
-  const makseAndmed = {                 // see tuli postman-st
-    "api_username": "92ddcfab96e34a5f",
+  const makseAndmed = {                 
+    "api_username": "92ddcfab96e34a5f",   // see tuli postman-st
     "account_name": "EUR3D1",
     "amount": this.koguSumma,
     "order_reference": Math.random() * 100,   // see viimane osa on lihtsalt et oleks rohkem random

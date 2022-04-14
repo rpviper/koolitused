@@ -1,10 +1,13 @@
 <button routerLink="/admin/tooted">Tagasi</button>
 
-<form (ngSubmit)="muudaToode()" [formGroup] = "muutmiseVorm">
+<div *ngIf="!toode">Laeb tooteid...</div> <!-- et kui ei ole tooteid veel olemas siis laeb tooteid -->
+
+<form *ngIf="toode" (ngSubmit)="muudaToode()" [formGroup] = "muutmiseVorm"> <!-- see ngif osa ütleb et kui toode on siis tee seda-->
     <label>Nimi: </label>
     <input formControlName="nimi" type="text">
     <label>Hind: </label>
     <input formControlName="hind" type="number">
     <label>Aktiivne: </label>
     <input formControlName="aktiivne" type="checkbox">
+    <button>Muuda</button>
 </form>
