@@ -22,8 +22,8 @@ export class LisaToodeComponent implements OnInit {
     //    tooted = JSON.parse(tootedLS);
     //  }
 
-    //  tooted.push(vorm.value);   // vomr.value tähendab et ta tuleb sellises formis: {nimi: "minginimi", hind: 123, aktiivne: true}
-    //  localStorage.setItem("tooted", JSON.stringify(tooted));  // styringify on vaja sest browser nõuab stringe aka jutumärke
+    //  tooted.push(vorm.value);   // vorm.value tähendab et ta tuleb sellises formis: {nimi: "minginimi", hind: 123, aktiivne: true}
+    //  localStorage.setItem("tooted", JSON.stringify(tooted));  // stringify on vaja sest browser nõuab stringe aka jutumärke
   
     this.http.post("https://rainokoolitused-default-rtdb.europe-west1.firebasedatabase.app/tooted.json", vorm.value).subscribe();
   
